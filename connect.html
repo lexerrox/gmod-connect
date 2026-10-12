@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rejoindre le serveur</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1e1f22;
+      color: #f2f3f5;
+      font-family: system-ui, sans-serif;
+      text-align: center;
+    }
+    .box { padding: 24px; max-width: 420px; }
+    a.btn {
+      display: inline-block;
+      margin: 16px 0;
+      padding: 12px 24px;
+      background: #5865f2;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    code { background: #2b2d31; padding: 2px 8px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Connexion au serveur…</h1>
+    <p>Steam devrait s'ouvrir automatiquement.</p>
+    <a class="btn" id="join" href="#">Cliquer ici si rien ne se passe</a>
+    <p>Ou dans la console du jeu :<br><code id="cmd"></code></p>
+  </div>
+
+  <script>
+    // ⚠️ Modifie uniquement cette ligne : IP (ou domaine) et port de ton serveur
+    var ADDRESS = "game03.octoheberg.fr:27057";
+
+    var url = "steam://connect/" + ADDRESS;
+    document.getElementById("join").href = url;
+    document.getElementById("cmd").textContent = "connect " + ADDRESS;
+    window.location.href = url;
+  </script>
+</body>
+</html>
